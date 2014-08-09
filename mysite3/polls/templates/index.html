@@ -1,0 +1,40 @@
+
+
+<!DOCTYPE html>
+<html>
+<body>
+<p>PICTURES CURRENTLY IN DATABASE</p>
+<p>Click on the picture to see more details and comment!</p>
+{% load staticfiles %}
+{% if list %}
+    {% for poll in list %}
+        <a href="/polls/{{poll.image_url}}"><img src="/static/polls/{{ poll.image_url }}/" alt="My Image" width="42" height="42"></a>
+        <br>
+    {% endfor %}
+{% else %}
+    <p>No posts are available.</p>
+{% endif %}
+
+
+<br><br><br>
+<p>Add an Image</p>
+<form name="add">
+<p>Path: <input type="text" name="path">
+<p>Owner: <input type="text" name="owner">
+<p>Description: <input type="text" name="desc">
+<br><br>
+<input type="Button" value="ADD" onClick="location.href='/polls/'+myreplace(add.path.value)+'/'+add.owner.value+'/'+add.desc.value")>
+</form>
+<br><br>
+
+
+<script>
+
+function myreplace(str) {
+    return str.replace(/\//g, '+');
+}
+
+</script>
+
+</body>
+</html>

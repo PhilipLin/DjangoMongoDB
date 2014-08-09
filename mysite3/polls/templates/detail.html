@@ -1,0 +1,41 @@
+
+
+<!DOCTYPE html>
+<html>
+<body>
+    <p align="middle">URL: {{Post.image_url}}</p>
+    <p align="middle"><img src="/static/polls/{{ Post.image_url }}/" alt="My Image" width="200" height="200"></p>
+    <p align="middle">Owner:{{Post.owner_name}}</p>
+    <p align="middle">Description: {{Post.image_desc}}</p>
+    <p align="middle">Rating: {{Post.avg_rate}}</p>
+    <br>
+
+
+
+<br>
+<p align="middle">Add a Comment:</p>
+<form name="update">
+<p align="middle">Username: <input type="text" name="name">
+<p align="middle">Rating: <input type="text" name="rating">
+<p align="middle">Comment: <input type="text" name="comment">
+<br>
+<p align="middle"><input type="Button" value="UPDATE" onClick="location.href='/polls/{{ Post.image_url }}/'+update.rating.value+'/'+update.name.value+'/'+update.comment.value")></p>
+<br>
+<p align="middle"><input type="Button" value="Back to Index" onClick="location.href='/polls/'")></p>
+</form>
+
+<p align="middle">Comments:</p>
+{% if Post.rate %}
+    {% for rating in Post.rate %}
+        <p align="middle">Name: {{rating.rate_name}}</p>   
+        <p align="middle">Rating: {{rating.ratings}}</p>
+        <p align="middle">Comment: {{rating.comments}}</p>
+        <br>
+    {% endfor %}
+{% else %}
+    <p align="middle"> No comments yet.</p>
+{% endif %}
+<br>
+
+</body>
+</html>
