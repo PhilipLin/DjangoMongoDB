@@ -15,4 +15,6 @@ Command 1:
 
 Command 2:
 ./mongo
+
+
 use mydb
