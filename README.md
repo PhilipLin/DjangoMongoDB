@@ -1,5 +1,9 @@
 DjangoMongoDB
 =============
+
+http://127.0.0.1:8000/polls/
+
+
 Django / MongoDB Test
 
 You can upload images and comment on them.
