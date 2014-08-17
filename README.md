@@ -1,5 +1,7 @@
 DjangoMongoDB
 =============
+Just Experimenting with Django Framework, and Mongodb/Django Interations.
+
 
 http://127.0.0.1:8000/polls/
 
